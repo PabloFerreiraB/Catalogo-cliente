@@ -1,5 +1,6 @@
 ﻿using CatalogoClientes.Dominio.Entidades;
 using CatalogoClientes.Dominio.Repositorio;
+using PagedList;
 using System.Web.Mvc;
 
 namespace CatalogoClientes.Web.Controllers
@@ -20,9 +21,11 @@ namespace CatalogoClientes.Web.Controllers
         }
 
 
-        public ActionResult Catalogo()
+        public ActionResult Catalogo(int? pagina)
         {
-            return View(_repositorioCliente.GetTodos());
+            int tamanhoPagina = 1;
+            int numeroPagina = pagina ?? 1;
+            return View(_repositorioCliente.GetTodos().ToPagedList(numeroPagina, tamanhoPagina));
         }
 
 

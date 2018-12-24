@@ -160,3 +160,7 @@ D:\CatalogoCliente\CatalogoClientes.Web\obj\Debug\CatalogoClientes.Web.dll
 D:\CatalogoCliente\CatalogoClientes.Web\obj\Debug\CatalogoClientes.Web.pdb
 D:\CatalogoCliente\CatalogoClientes.Web\bin\EntityFramework.SqlServer.dll
 D:\CatalogoCliente\CatalogoClientes.Web\bin\EntityFramework.SqlServer.xml
+D:\CatalogoCliente\CatalogoClientes.Web\bin\PagedList.dll
+D:\CatalogoCliente\CatalogoClientes.Web\bin\PagedList.Mvc.dll
+D:\CatalogoCliente\CatalogoClientes.Web\bin\PagedList.xml
+D:\CatalogoCliente\CatalogoClientes.Web\bin\PagedList.Mvc.xml

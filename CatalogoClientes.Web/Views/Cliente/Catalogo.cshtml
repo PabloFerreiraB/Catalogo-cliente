@@ -1,57 +1,20 @@
-﻿@model IEnumerable<CatalogoClientes.Dominio.Entidades.Cliente>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<CatalogoClientes.Dominio.Entidades.Cliente>
 
 @{
-    ViewBag.Title = "Catalogo";
+    ViewBag.Title = "Catálogo de Clientes";
 }
 
-<h2>Catalogo</h2>
+@foreach (var item in Model)
+{
+    @Html.Partial("_CatalogoResumo", item)
+}
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="text-primary">
+    Página @Model.PageNumber de @Model.PageCount
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Imagem)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Imagem)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ClienteId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ClienteId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ClienteId })
-        </td>
-    </tr>
-}
-
-</table>
+<span class="btn btn-group pull-right">
+    @Html.PagedListPager(Model, pagina => Url.Action("Catalogo", new { pagina
+    }))
+</span>

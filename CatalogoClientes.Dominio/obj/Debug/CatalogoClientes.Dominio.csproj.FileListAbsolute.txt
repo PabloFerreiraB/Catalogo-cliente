@@ -17,8 +17,8 @@ D:\CatalogoCliente\CatalogoClientes.Dominio\bin\Debug\EntityFramework.dll
 D:\CatalogoCliente\CatalogoClientes.Dominio\bin\Debug\EntityFramework.SqlServer.dll
 D:\CatalogoCliente\CatalogoClientes.Dominio\bin\Debug\EntityFramework.xml
 D:\CatalogoCliente\CatalogoClientes.Dominio\bin\Debug\EntityFramework.SqlServer.xml
-D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csprojAssemblyReference.cache
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csproj.CoreCompileInputs.cache
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csproj.CopyComplete
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.dll
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.pdb
+D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csprojAssemblyReference.cache
