@@ -1,53 +1,64 @@
 ﻿@model CatalogoClientes.Dominio.Entidades.Cliente
 
-<div class="well">
-    <table>
-        <tr>
-            <td rowspan="3">
-                <a href="#" class="thumbnail inner-border">
-                    <img src="~/Imagens/semFoto.png" width="150" height="150" alt="Sem foto" />
-                </a>
-            </td>
-            <td>
-                <a href="#" class="btn btn-info btn-lg">
-                    <strong>@Model.Nome</strong>
-                </a>
-            </td>
-        </tr>
+<div class="clientes panel panel-primary">
 
-        <tr>
-            <td>
-                @Model.Email <br />
-                @Model.Endereco
-            </td>
-        </tr>
+    <div class="panel-heading panel-head">
+        Cadastro de clientes
+    </div>
 
-        <tr>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-default">
+    <div class="panel-body">
+        <table>
+            <tr>
+                <td rowspan="3">
+
+                    @if (Model.Imagem != null)
+                    {
+                        <div class="pull-left" style="margin-right: 10px">
+                            <img src="@Url.Action("ExibirImagem", "arquivo", new { id=Model.ClienteId}) " width="150" height="150" />
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="pull-left" style="margin-right: 10px">
+                            <img class="img-thumbnail" src="~/Imagens/semFoto.png" width="150" height="150" alt="Sem foto" />
+                        </div>
+                    }
+
+                </td>
+                <td>
+                    <a href="#" class="btn btn-info btn-lg">
+                        <strong>@Model.Nome</strong>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Model.Email <br />
+                    @Model.Endereco
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="btn-group">
                         @Html.ActionLink("Editar", "Edit", new
                         {
-                           id=Model.ClienteId
-                        })
-                    </button>
+                            id=Model.ClienteId
+                        }, new { @class = "btn btn-success" })
 
-                    <button type="button" class="btn btn-default">
                         @Html.ActionLink("Detalhes", "Details", new
                         {
-                           id = Model.ClienteId
-                        })
-                    </button>
+                            id = Model.ClienteId
+                        }, new { @class = "btn btn-primary" })
 
-                    <button type="button" class="btn btn-default">
                         @Html.ActionLink("Deletar", "Delete", new
                         {
-                           id = Model.ClienteId
-                        })
-                    </button>
-
-                </div>
-            </td>
-        </tr>
-    </table>
+                            id = Model.ClienteId
+                        }, new { @class = "btn btn-danger" })
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

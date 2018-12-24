@@ -17,5 +17,6 @@ namespace CatalogoClientes.Dominio.Repositorio
         {
             return contexto.Clientes.ToList();
         }
+
     }
 }
