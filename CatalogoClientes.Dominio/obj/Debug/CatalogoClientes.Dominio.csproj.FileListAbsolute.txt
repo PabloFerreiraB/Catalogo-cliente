@@ -21,4 +21,3 @@ D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.c
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csproj.CopyComplete
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.dll
 D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.pdb
-D:\CatalogoCliente\CatalogoClientes.Dominio\obj\Debug\CatalogoClientes.Dominio.csprojAssemblyReference.cache

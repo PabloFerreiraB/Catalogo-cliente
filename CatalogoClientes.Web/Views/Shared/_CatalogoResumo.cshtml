@@ -1,14 +1,14 @@
 ﻿@model CatalogoClientes.Dominio.Entidades.Cliente
 
-<div class="clientes panel panel-primary">
-
-    <div class="panel-heading panel-head">
-        Olá, seja-bem vindo!
+<div class="panel panel-primary">
+    
+    <div class="panel-heading panel-head text-center">
+        Nós amamos porque ele nos amou primeiro. (1 João 4:19)
     </div>
 
     <div class="panel-body">
 
-        <a class="btn btn-success" style="margin-left: 5px" id="CriarCliente" href="@Url.Action("Create")">
+        <a class="btn btn-success" style="margin: 5px 10px" id="CriarCliente" href="@Url.Action("Create")">
             <span class="glyphicon glyphicon-plus">
                 Incluir cliente
             </span>
@@ -20,8 +20,8 @@
 
                     @if (Model.Imagem != null)
                     {
-                        <div class="pull-left" style="margin-right: 10px">
-                            <img src="@Url.Action("ExibirImagem", "arquivo", new { id=Model.ClienteId}) " width="150" height="150" />
+                        <div class="pull-left" style="margin: 5px">
+                            <img src="@Url.Action("ExibirImagem", "arquivo", new { id=Model.ClienteId}) " width="150" height="150"/>
                         </div>
                     }
                     else
@@ -33,7 +33,7 @@
 
                 </td>
                 <td>
-                    <a href="#" class="btn btn-info btn-lg">
+                    <a href="#" class="btn btn-primary btn-lg">
                         <strong>@Model.Nome</strong>
                     </a>
                 </td>
@@ -49,9 +49,10 @@
             <tr>
                 <td>
                     <div class="btn-group">
+
                         @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }, new { @class = "btn btn-success" })
 
-                        @Html.ActionLink("Detalhes", "Details", new { id = Model.ClienteId }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Detalhes", "Details", new { id = Model.ClienteId }, new { @class = "btn btn-warning" })
 
                         @Html.ActionLink("Deletar", "Delete", new { id = Model.ClienteId }, new { @class = "btn btn-danger" })
                     </div>
