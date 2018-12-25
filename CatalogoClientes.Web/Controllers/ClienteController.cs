@@ -109,14 +109,34 @@ namespace CatalogoClientes.Web.Controllers
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ClienteId,Nome,Email,Endereco,Imagem,Tipo")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "ClienteId,Nome,Email,Endereco,Imagem,Tipo")] Cliente cliente, HttpPostedFileBase upload)
         {
             if (ModelState.IsValid)
             {
+                if (upload != null && upload.ContentLength > 0)
+                {
+                    var arquivoImagem = new Cliente
+                    {
+                        Tipo = upload.ContentType
+                    };
+
+                    using (var reader = new BinaryReader(upload.InputStream))
+                    {
+                        arquivoImagem.Imagem = reader.ReadBytes(upload.ContentLength);
+                    }
+
+                    cliente.Imagem = arquivoImagem.Imagem;
+                    cliente.Tipo = arquivoImagem.Tipo;
+                }
+
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
+
+                TempData["mensagem"] = string.Format("{0} : atualizado com sucesso.", cliente.Nome);
+
                 return RedirectToAction("Catalogo");
             }
+
             return View(cliente);
         }
 
@@ -143,6 +163,9 @@ namespace CatalogoClientes.Web.Controllers
             Cliente cliente = db.Clientes.Find(id);
             db.Clientes.Remove(cliente);
             db.SaveChanges();
+
+            TempData["mensagem"] = string.Format("{0} : excluído com sucesso", cliente.Nome);
+
             return RedirectToAction("Catalogo");
         }
 

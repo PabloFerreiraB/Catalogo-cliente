@@ -3,10 +3,17 @@
 <div class="clientes panel panel-primary">
 
     <div class="panel-heading panel-head">
-        Cadastro de clientes
+        Olá, seja-bem vindo!
     </div>
 
     <div class="panel-body">
+
+        <a class="btn btn-success" style="margin-left: 5px" id="CriarCliente" href="@Url.Action("Create")">
+            <span class="glyphicon glyphicon-plus">
+                Incluir cliente
+            </span>
+        </a>
+
         <table>
             <tr>
                 <td rowspan="3">
@@ -42,20 +49,11 @@
             <tr>
                 <td>
                     <div class="btn-group">
-                        @Html.ActionLink("Editar", "Edit", new
-                        {
-                            id=Model.ClienteId
-                        }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Editar", "Edit", new { id = Model.ClienteId }, new { @class = "btn btn-success" })
 
-                        @Html.ActionLink("Detalhes", "Details", new
-                        {
-                            id = Model.ClienteId
-                        }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Detalhes", "Details", new { id = Model.ClienteId }, new { @class = "btn btn-primary" })
 
-                        @Html.ActionLink("Deletar", "Delete", new
-                        {
-                            id = Model.ClienteId
-                        }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("Deletar", "Delete", new { id = Model.ClienteId }, new { @class = "btn btn-danger" })
                     </div>
                 </td>
             </tr>

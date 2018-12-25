@@ -4,55 +4,63 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="clientes panel panel-primary">
 
-<div>
-    <h4>Cliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+    <div class="panel-heading panel-head">
+        Detalhes do cliente
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+    <div class="panel-body">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        <dl class="dl-horizontal">
+            @if (Model.Imagem != null)
+            {
+                <dt>
+                    Imagem
+                </dt>
+                <dd>
+                    <img src="@Url.Action("ExibirImagem", "Arquivo", new
+                             { id = Model.ClienteId })" width="150" height="150" alt="Foto escolhida" />
+                </dd>
+            }
+            else
+            {
+                <dt>
+                    Imagem
+                </dt>
+                <dd>
+                    <img src="~/Imagens/semFoto.png" width="150" height="150" alt="Sem foto" />
+                </dd>
+            }
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Endereco)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Imagem)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Imagem)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+        </dl>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </dt>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteId }, new { @class = "btn btn-success" })
+            @Html.ActionLink("Voltar", "Catalogo", null, new { @class = "btn btn-primary" })
+        </p>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tipo)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

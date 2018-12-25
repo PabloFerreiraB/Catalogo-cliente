@@ -11,6 +11,7 @@ namespace CatalogoClientes.Web.Controllers
             using (ClienteContexto db = new ClienteContexto())
             {
                 var arquivoRetorno = db.Clientes.Find(id);
+
                 return File(arquivoRetorno.Imagem, arquivoRetorno.Tipo);
             }
         }
