@@ -6,15 +6,39 @@
     <title>@ViewBag.Title - Pablo Ferreira</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/all.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div class="container" >
 
+        <ul class="list-inline">
+            <li class="nav-item">
+                <a style="font-size: 45px; color: #006097" href="https://www.linkedin.com/in/pabloferreira14/" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </li>
 
+            <li class="nav-item">
+                <a style="font-size: 45px; color: #1BD741" href="https://bit.ly/2PFz6QB" target="_blank">
+                    <i class="fab fa-whatsapp-square"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a style="font-size: 45px; color: #000000" href="https://github.com/pabloferreirab" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a style="font-size: 24px; color: #000000" href="mailto:pablo_ferreira14@hotmail.com">pablo_ferreira14@hotmail.com</a>
+            </li>
+        </ul>
 
 
         <div class="row panel">
+
             <div class="col-xs-8">
                 @if (TempData["mensagem"] != null)
                 {
